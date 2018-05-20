@@ -8,6 +8,7 @@ using MyShop.DataAccess.InMemory;
 using MyShop.Core.ViewModels;
 using MyShop.Core.Contracts;
 using System.IO;
+using MyShop.WebUI.Encryption;
 
 namespace MyShop.WebUI.Controllers
 {
@@ -15,11 +16,13 @@ namespace MyShop.WebUI.Controllers
     {
         IRepository<Product> context;
         IRepository<ProductCategory> productCategories;
+        EncryptionClass encrypt = new EncryptionClass();
 
         public ProductManagerController(IRepository<Product> productContext, IRepository<ProductCategory> productCatergoryContext)
         {
             context = productContext;
             productCategories = productCatergoryContext;
+            encrypt.Encrypt();
         }
 
         // GET: ProductManager
