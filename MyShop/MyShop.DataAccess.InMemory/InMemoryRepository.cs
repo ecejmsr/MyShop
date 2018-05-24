@@ -82,5 +82,10 @@ namespace MyShop.DataAccess.InMemory
                 throw new Exception(className + " Is Not Found");
             }
         }
+
+        public void Delete()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

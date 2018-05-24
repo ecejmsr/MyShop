@@ -33,12 +33,12 @@ namespace MyShop.DataAccess.SQL
         public void Delete(string ID)
         {
             var item = Find(ID);
-            if(context.Entry(item).State == EntityState.Modified)
+            if (context.Entry(item).State == EntityState.Modified)
             {
                 dbSet.Attach(item);
             }
-
             dbSet.Remove(item);
+
         }
 
         public T Find(string ID)
